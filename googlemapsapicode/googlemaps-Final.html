@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-	<link rel = "stylesheet" href = "googlemaps-Final.css">
+	<link rel = "stylesheet" href = "singlePageTemplate.css">
 	<script src= "googlemaps-Final.js"> </script>
 	<style>
        #map {
@@ -11,9 +11,27 @@
     </style>
 	</head>
 		<body>
-				<div id="map"></div>			
-				<script async defer
-				src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlB1sX3ImZL0QkNm2QFZw8QQrBJY_yiCw&callback=initMap">
-				</script>
-		</body>
+        
+        <div class="container"> 
+          <!-- Navigation -->
+          <header> <a href="">
+            <h4 class="logo">SLOTH</h4></a>
+            <nav>
+              <ul>
+                <li><a href="#hero">HOME</a></li>
+                <li><a href="#about">ABOUT</a></li>
+                <li> <a href="#contact">CONNECT</a></li>
+              </ul>
+            </nav>
+          </header>
+         <section class="hero" id="hero">
+    	<h2 class="hero_header">SL<span class="light">OTH</span></h2>
+    	<p class="tagline">LET'S HANG OUT TOGETHER</p>
+  		</section>
+        <div id="map"></div>			
+		 <script async defer
+		 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlB1sX3ImZL0QkNm2QFZw8QQrBJY_yiCw&callback=initMap">
+		 </script>
+		</div>
+        </body>
 </html>

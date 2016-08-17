@@ -20,7 +20,7 @@ function initMap() {
 	
 	function setMarkers(map) {
         var image = {
-          url: 'starbucksmarker.psd',
+          url: 'starbucksmarker.png',
 		  size: new google.maps.Size(20, 32),
           origin: new google.maps.Point(0, 0),
           anchor: new google.maps.Point(0, 32)
@@ -37,7 +37,7 @@ function initMap() {
           var marker = new google.maps.Marker({
             position: {lat: starbuck[1], lng: starbuck[2]},
             map: map,
-            icon: 'starbucksmarker.psd',
+            icon: 'starbucksmarker.png',
 			shape: shape,
             title: starbuck[0],
             zIndex: starbuck[3]
