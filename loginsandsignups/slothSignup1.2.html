@@ -1,0 +1,52 @@
+<!DOCTYPE>
+<html>
+    <head>
+    <script src = "slothSignup.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"> </script>
+    <script>
+    angular.module('app', []).controller('appc', ['$scope',
+      function($scope) {
+        $scope.selected = '';
+      }
+    ]);
+  </script>
+    </head>
+        <body ng-app="app" ng-controller="appc">
+		<div id="register" class="animate form">
+			<form  action="mysuperscript.php" autocomplete="on"> 
+				<h1> Sign Up </h1> 
+				<p> 
+					<label for="usernamesignup" class="uname" data-icon="u">Create Username:</label>
+					<input id="usernamesignup" name="usernamesignup" required="required" type="text" placeholder="" />
+				</p>
+				<p> 
+					<label for="emailsignup" class="youmail" data-icon="e" > Email:</label>
+					<input id="emailsignup" name="emailsignup" required="required" type="email" placeholder=""/> 
+				</p>
+				<p> 
+					<label for="passwordsignup" class="youpasswd" data-icon="p">Create Password: </label>
+					<input id="passwordsignup" name="passwordsignup" required="required" type="password" placeholder=""/>
+				</p>
+				<p> 
+					<label for="passwordsignup_confirm" class="youpasswd" data-icon="p">Confirm Password: </label>
+					<input  onkeyup="checkPass(); return false;" id="passwordsignup_confirm" name="passwordsignup_confirm" required="required" type="password" placeholder=""/>
+                    <span id="confirmMessage" class="confirmMessage"></span>
+				</p>
+                <label>Gender:</label>
+                <div>
+    <input type="checkbox" ng-checked="selected=='male'" ng-true-value="'male'" ng-model="selected">Male
+    <br>
+    <input type="checkbox" ng-checked="selected=='female'" ng-true-value="'female'" ng-model="selected">Female
+    <br>
+    <input type="checkbox" ng-checked="selected=='other'" ng-true-value="'other'" ng-model="selected">Other
+    </div>
+				<p class="signin button"> 
+					<input type="submit" value="Sign up"/> 
+				</p>
+				<p class="change_link">  
+					OR
+					<a href="slothLogin.html" class="to_register"> Log In </a>
+				</p>
+			</form>
+        </body>
+</html>
