@@ -1,0 +1,23 @@
+extends layout
+script(src="/javascripts/global.js")
+block content
+    h1.
+        User List
+    // Wrapper
+    #wrapper
+
+        // USER LIST
+        #userList
+            table
+                thead
+                    th Username
+                    th Email
+                    th Bio
+                tbody
+        // /USER LIST
+
+    // /WRAPPER
+    ul
+        each user, i in userlist
+            li
+                a(href="")= user.username

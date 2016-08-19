@@ -1,0 +1,59 @@
+doctype html
+html
+  head
+    title Sloth - Survey
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min.js')
+    script(src='js/survey.bootstrap.min.js')
+  body
+    h1 Survey
+    form(action='survey.cgi', method='POST')
+      | What are your interests?
+      p
+        input(type='checkbox', name='AppSourceA', onchange='formChanged()')
+        | Art
+        br
+        input(type='checkbox', name='AppSourceB', onchange='formChanged()')
+        | Music
+        br
+        input(type='checkbox', name='AppSourceC', onchange='formChanged()')
+        | Academics
+        br
+        input(type='checkbox', name='AppSourceD', onchange='formChanged()')
+        | Literature
+        br
+        input(type='checkbox', name='AppSourceE', onchange='formChanged()')
+        | Sports
+        br
+        input(type='checkbox', name='AppSourceF', onchange='formChanged()')
+        | Food/Cooking
+        br
+        input(type='checkbox', name='AppSourceG', onchange='formChanged()')
+        | None of the Above/Prefer Not to Answer
+        br
+    form(action='survey.cgi', method='POST')
+      | Do you experience or have you experienced any of these feelings/problems?
+      p
+        input(type='checkbox', name='anx', onchange='formChanged()')
+        | Anxiety
+        br
+        input(type='checkbox', name='str', onchange='formChanged()')
+        | Stress
+        br
+        input(type='checkbox', name='rel', onchange='formChanged()')
+        | Relationship Issues
+        br
+        input(type='checkbox', name='bul', onchange='formChanged()')
+        | Victim of Bullying
+        br
+        input(type='checkbox', name='dep', onchange='formChanged()')
+        | Depression
+        br
+        input(type='checkbox', name='low', onchange='formChanged()')
+        | Low Self Esteem
+        br
+        input(type='checkbox', name='sui', onchange='formChanged()')
+        | Suicidal Thoughts
+        br
+        input(type='checkbox', name='oth', onchange='formChanged()')
+        | No/Prefer Not to Answer
+        br

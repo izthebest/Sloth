@@ -1,0 +1,39 @@
+doctype html
+html
+  head
+    link(rel='stylesheet', type='text/css', href='singlePageTemplate.css')
+  |         
+  body
+    center
+      .container
+        .row.profile
+          .col-md-3
+            .profile-sidebar
+              // SIDEBAR USERPIC
+              .profile-userpic
+                // <img src="http://keenthemes.com/preview/metronic/theme/assets/admin/pages/media/profile/profile_user.jpg" class="img-responsive" alt="">
+              // END SIDEBAR USERPIC
+              // SIDEBAR USER TITLE
+              p
+              |                             
+              .profile-usertitle
+                .profile-usertitle-name
+                  p
+                  |                                     
+                  p=profile[profile.length-1].username
+                |                                 
+                p
+                |                                 
+                p
+                |                                 
+                .profile-usertitle-about
+                  p=profile[profile.length-1].bio
+              |                                 
+              p
+              // END SIDEBAR USER TITLE
+              // SIDEBAR BUTTONS
+              .profile-userbuttons
+                button.btn.btn-success.btn-sm(type='button') Send Friend Request
+                |                                 
+                button.btn.btn-danger.btn-sm(type='button') Message
+              // END SIDEBAR BUTTONS
