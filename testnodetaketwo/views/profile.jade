@@ -1,39 +1,105 @@
-doctype html
-html
-  head
-    link(rel='stylesheet', type='text/css', href='singlePageTemplate.css')
-  |         
+doctype html(lang='en-US')
+head
+    meta(charset='utf-8')
+    |   
+    meta(http-equiv='Content-Type', content='text/html')
+    |   
+    title User Profile
+    |   
+    meta(name='author', content='Jake Rocheleau')
+    |   
+    link(href='css/singlePageTemplate.css', rel='stylesheet', type='text/css')
+    |   
+    link(href='css/bootstrap.css', rel='stylesheet', type='text/css')
+    |   
+    link(href='PROFILE_styles.css', rel='stylesheet', type='text/css')
+    |   
+    script(type='text/javascript', src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js")
+     
+    script(type='text/javascript', src='javascripts/matchingalgorithm.js')
   body
-    center
-      .container
-        .row.profile
-          .col-md-3
-            .profile-sidebar
-              // SIDEBAR USERPIC
-              .profile-userpic
-                // <img src="http://keenthemes.com/preview/metronic/theme/assets/admin/pages/media/profile/profile_user.jpg" class="img-responsive" alt="">
-              // END SIDEBAR USERPIC
-              // SIDEBAR USER TITLE
-              p
-              |                             
-              .profile-usertitle
-                .profile-usertitle-name
-                  p
-                  |                                     
-                  p=profile[profile.length-1].username
-                |                                 
-                p
-                |                                 
-                p
-                |                                 
-                .profile-usertitle-about
-                  p=profile[profile.length-1].bio
-              |                                 
-              p
-              // END SIDEBAR USER TITLE
-              // SIDEBAR BUTTONS
-              .profile-userbuttons
-                button.btn.btn-success.btn-sm(type='button') Send Friend Request
-                |                                 
-                button.btn.btn-danger.btn-sm(type='button') Message
-              // END SIDEBAR BUTTONS
+    .container
+      header
+        a(href='')
+          h4.logo SLOTH
+        |     
+        nav
+          ul
+            li
+              a(href='/') HOME
+            |         
+            li
+              a(href='learn') LEARN
+            |         
+            li
+              a(href='connect') CONNECT
+            |         
+            li
+              a(href='profile') PROFILE
+      |   
+      #w
+        //
+          <div id="content" class="clearfix">
+          <nav id="profiletabs">
+          <ul class="clearfix">
+          <li><a href="PROFILE_index.html" class="sel">Bio</a></li>
+          <li><a href="friends.html">Friends</a></li>
+          <li><a href="algorithm.html">Matches</a></li>
+          </ul>
+          </nav>
+        .row.container-fluid
+          .col-sm-4
+            h1 My Friends
+            // <section id="friends" class="hidden">
+            // <ul id="friendslist" class="clearfix">
+            ul#font
+              li Friend 1 
+              ul
+                li bio
+                //=profile[FRIEND1].bio
+              |             
+              li Friend 2
+              ul
+                li bio
+                //=profile[FRIEND2].bio
+              |             
+              li Friend 3 
+              ul
+                li bio
+                //=profile[FRIEND3].bio
+          |       
+          .col-sm-4
+            br
+            br
+            .profileimage
+              img(src='/images/slothfacelogo.jpg', alt='profile image icon', width='200', height='200')
+            |       
+            h1=profile[profile.length-1].username
+            // <section class="col-sm-8">
+            p=profile[profile.length-1].bio
+          |       
+          .col-sm-4
+            h1 Matches
+            |    
+            ul#font
+              li Friend 1 
+              ul
+                li bio
+                //=profile[FRIEND1].bio
+              button(type='button', onclick="alert('Your new friend has been added to your Friend List!')") Add Friend
+              |             
+              li Friend 2
+              ul
+                li bio
+                //=profile[FRIEND2].bio
+              button(type='button', onclick="alert('Your new friend has been added to your Friend List!')") Add Friend
+              |             
+              li Friend 3 
+              ul
+                li bio
+                //=profile[FRIEND3].bio
+              button(type='button', onclick="alert('Your new friend has been added to your Friend List!')") Add Friend
+        |     
+        .copyright
+          | &copy;2016 - 
+          strong ADOBE SEATTLE GIRLS WHO CODE

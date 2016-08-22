@@ -1,10 +1,34 @@
 var express = require('express');
 var router = express.Router();
+var path = require('path');
+var routingPath = __dirname + '/views/';
+var app = express();
 
-/* GET home page. */
+app.use(express.static(path.join(__dirname + '/public')));
+
+/* GET home page.  */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+  //res.render('index', { title: 'Express' });
+  res.sendFile(routingPath + 'index.html');
+}); 
+
+router.get('/learn', function(req, res, next) {
+  //res.render('index', { title: 'Express' });
+  res.sendFile(routingPath + 'learnpage.html');
+}); 
+
+router.get('/connect', function(req, res, next) {
+  //res.render('index', { title: 'Express' });
+  res.sendFile(routingPath + 'realmap.html');
+}); 
+router.get('/gethelp', function(req, res, next) {
+  //res.render('index', { title: 'Express' });
+  res.sendFile(routingPath + 'gethelp.html');
+}); 
+router.get('/social', function(req, res, next) {
+  //res.render('index', { title: 'Express' });
+  res.sendFile(routingPath + 'social.html');
+}); 
 
 /* GET USerlist Page */
 router.get('/userlist', function(req, res) {
@@ -25,8 +49,20 @@ router.get('/profile', function(req, res){
         "profile" : docs,
          title : 'profile'['profile'.length-1].username
     });
+    var currentUser = docs[docs.length-1];
+    var users = docs;
+    //var depression;
+    var matchList = [];
+    for (var i = 0; i < docs.length-1; i++) {
+        if (docs[i].dep == currentUser.dep){
+            //add user to matchList[]
+            matchList.push(docs[i]);
+            console.log(matchList);   
+        }
+        };
   });
 });
+
 
 router.get('/newuser', function(req, res, next) {
   res.render('newuser', { title: 'Add New User' });
@@ -40,7 +76,7 @@ router.get('/newuserbyizzy', function(req, res, next) {
     res.render('newuserbyizzy', {
         "newuserbyizzy" : docs 
     });
-  });
+    });
 });
 
 /* POST to Add User Service */
@@ -73,10 +109,6 @@ router.post('/newuserbyizzy', function(req, res) {
        // if (userName == collection[users].username)
     if(collection.find({username:{$exists: true, $ne: userName}})){
         // Submit to the DB
-        res.send("ERROR! This username has already been taken. Please go back and try again!");
-        
-        }
-    else{
         collection.insert({
                 "username" : userName,
                 "email" : userEmail,
@@ -100,6 +132,10 @@ router.post('/newuserbyizzy', function(req, res) {
                     res.redirect("profile");
                 }
         });
+        
+        }
+    else{
+        res.send("ERROR! This username has already been taken. Please go back and try again!");
     }
     
     

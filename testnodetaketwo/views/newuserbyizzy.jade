@@ -1,65 +1,65 @@
 extends layout
-
+link(rel="stylesheet" href="css/singlePageTemplate.css")
 block content
-    h1= title
-    form#formAddUser(name="adduser",method="post",action="/newuserbyizzy")
-        input#inputUserName(type="text", placeholder="Insert Username", name="username", required)
-        br
-        input#inputUserEmail(type="email", placeholder="Insert Email", name="useremail", required)
-        br
-        input#inputUserPassword(type="password", placeholder="New Password", name="password", required)
-        br
-        br
-        input#inputUserBio(type="text", placeholder="Share your Story/A Bio", name="userbio", required)
-        br
-        br
-        h1 Survey
-        h1 What are your interests?
-        input(type='checkbox', name='AppSourceA', onchange='formChanged()')
-        | Art
-        br
-        input(type='checkbox', name='AppSourceB', onchange='formChanged()')
-        | Music
-        br
-        input(type='checkbox', name='AppSourceC', onchange='formChanged()')
-        | Academics
-        br
-        input(type='checkbox', name='AppSourceD', onchange='formChanged()')
-        | Literature
-        br
-        input(type='checkbox', name='AppSourceE', onchange='formChanged()')
-        | Sports
-        br
-        input(type='checkbox', name='AppSourceF', onchange='formChanged()')
-        | Food/Cooking
-        br
-        input(type='checkbox', name='AppSourceG', onchange='formChanged()')
-        | None of the Above/Prefer Not to Answer
-        br
-        h1 Do you experience or have you experienced any of these feelings/problems?
-        input(type='checkbox', name='anx', onchange='formChanged()')
-        | Anxiety
-        br
-        input(type='checkbox', name='str', onchange='formChanged()')
-        | Stress
-        br
-        input(type='checkbox', name='rel', onchange='formChanged()')
-        | Relationship Issues
-        br
-        input(type='checkbox', name='bul', onchange='formChanged()')
-        | Victim of Bullying
-        br
-        input(type='checkbox', name='dep', onchange='formChanged()')
-        | Depression
-        br
-        input(type='checkbox', name='low', onchange='formChanged()')
-        | Low Self Esteem
-        br
-        input(type='checkbox', name='sui', onchange='formChanged()')
-        | Suicidal Thoughts
-        br
-        input(type='checkbox', name='oth', onchange='formChanged()')
-        | No/Prefer Not to Answer
-        br
-        br
-        button#btnSubmit(type="submit") submit
+        h1 Create A New Account
+        form#formAddUser(name="adduser",method="post",action="/newuserbyizzy")
+            input#inputUserName(type="text", placeholder="Insert Username", name="username", required)
+            br
+            input#inputUserEmail(type="email", placeholder="Insert Email", name="useremail", required)
+            br
+            input#inputUserPassword(type="password", placeholder="New Password", name="password", required)
+            br
+            br
+            input#inputUserBio(type="text", placeholder="Share your Story/A Bio", name="userbio", required)
+            br
+            br
+            h1 Survey
+            h2 What are your interests?
+            input(type='checkbox', name='AppSourceA', onchange='formChanged()')
+            | Art
+            br
+            input(type='checkbox', name='AppSourceB', onchange='formChanged()')
+            | Music
+            br
+            input(type='checkbox', name='AppSourceC', onchange='formChanged()')
+            | Academics
+            br
+            input(type='checkbox', name='AppSourceD', onchange='formChanged()')
+            | Literature
+            br
+            input(type='checkbox', name='AppSourceE', onchange='formChanged()')
+            | Sports
+            br
+            input(type='checkbox', name='AppSourceF', onchange='formChanged()')
+            | Food/Cooking
+            br
+            input(type='checkbox', name='AppSourceG', onchange='formChanged()')
+            | None of the Above/Prefer Not to Answer
+            br
+            h2 Do you experience or have you experienced any of these feelings/problems?
+            input(type='checkbox', name='anx', onchange='formChanged()')
+            | Anxiety
+            br
+            input(type='checkbox', name='str', onchange='formChanged()')
+            | Stress
+            br
+            input(type='checkbox', name='rel', onchange='formChanged()')
+            | Relationship Issues
+            br
+            input(type='checkbox', name='bul', onchange='formChanged()')
+            | Victim of Bullying
+            br
+            input(type='checkbox', name='dep', onchange='formChanged()')
+            | Depression
+            br
+            input(type='checkbox', name='low', onchange='formChanged()')
+            | Low Self Esteem
+            br
+            input(type='checkbox', name='sui', onchange='formChanged()')
+            | Suicidal Thoughts
+            br
+            input(type='checkbox', name='oth', onchange='formChanged()')
+            | No/Prefer Not to Answer
+            br
+            br
+            button#btnSubmit(type="submit") submit
