@@ -5,8 +5,7 @@ head
     meta(http-equiv='Content-Type', content='text/html')
     |   
     title User Profile
-    |   
-    meta(name='author', content='Jake Rocheleau')
+    meta(name='author', content='Isabel Hankes & Meilani Eyre')
     |   
     link(href='css/singlePageTemplate.css', rel='stylesheet', type='text/css')
     |   
@@ -15,8 +14,6 @@ head
     link(href='PROFILE_styles.css', rel='stylesheet', type='text/css')
     |   
     script(type='text/javascript', src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js")
-     
-    script(type='text/javascript', src='javascripts/matchingalgorithm.js')
   body
     .container
       header
@@ -48,58 +45,56 @@ head
           </ul>
           </nav>
         .row.container-fluid
-          .col-sm-4
+          .col-sm-1
+          .col-sm-3
             h1 My Friends
-            // <section id="friends" class="hidden">
-            // <ul id="friendslist" class="clearfix">
             ul#font
-              li Friend 1 
-              ul
-                li bio
-                //=profile[FRIEND1].bio
-              |             
+              li Friend 1
+              button Chat
               li Friend 2
-              ul
-                li bio
-                //=profile[FRIEND2].bio
-              |             
-              li Friend 3 
-              ul
-                li bio
-                //=profile[FRIEND3].bio
-          |       
-          .col-sm-4
+              button Chat
+              li Friend 3
+              button Chat
+              li Friend 4
+              button Chat
+              li Friend 5
+              button Chat
+              li Friend 6
+              button Chat
+          .col-sm-3
             br
             br
             .profileimage
               img(src='/images/slothfacelogo.jpg', alt='profile image icon', width='200', height='200')
-            |       
-            h1=profile[profile.length-1].username
-            // <section class="col-sm-8">
-            p=profile[profile.length-1].bio
-          |       
+              h1=profile[profile.length-1].username
+              // <section class="col-sm-8">
+              p=profile[profile.length-1].bio
           .col-sm-4
             h1 Matches
-            |    
             ul#font
-              li Friend 1 
-              ul
-                li bio
-                //=profile[FRIEND1].bio
-              button(type='button', onclick="alert('Your new friend has been added to your Friend List!')") Add Friend
+              li#match0=profile[profile.length-1].matches[0] 
+              button Add Friend
+              br
               |             
-              li Friend 2
-              ul
-                li bio
-                //=profile[FRIEND2].bio
-              button(type='button', onclick="alert('Your new friend has been added to your Friend List!')") Add Friend
+              li=profile[profile.length-1].matches[1]
+              button Add Friend
+              br
               |             
-              li Friend 3 
-              ul
-                li bio
-                //=profile[FRIEND3].bio
-              button(type='button', onclick="alert('Your new friend has been added to your Friend List!')") Add Friend
-        |     
+              li=profile[profile.length-1].matches[2]
+              button Add Friend
+              br
+              |             
+              li=profile[profile.length-1].matches[3]
+              button Add Friend
+              br
+              |             
+              li=profile[profile.length-1].matches[4]
+              button Add Friend
+              br
+              |             
+              li=profile[profile.length-1].matches[5]
+              button Add Friend
+              br
         .copyright
           | &copy;2016 - 
           strong ADOBE SEATTLE GIRLS WHO CODE

@@ -53,15 +53,67 @@ router.get('/profile', function(req, res){
     var users = docs;
     //var depression;
     var matchList = [];
+    var friendList = [];
     for (var i = 0; i < docs.length-1; i++) {
-        if (docs[i].dep == currentUser.dep){
+        if (docs[i].dep == currentUser.dep || 
+            docs[i].anx == currentUser.anx || 
+            docs[i].low == currentUser.low || 
+            docs[i].sui == currentUser.sui || 
+            docs[i].rel == currentUser.rel ||
+            docs[i].bul == currentUser.bul ||
+            docs[i].str == currentUser.str){
             //add user to matchList[]
-            matchList.push(docs[i]);
-            console.log(matchList);   
+            matchList.push(docs[i].username);
+            console.log(matchList); 
+            collection.update(
+            {_id: currentUser._id},
+            {
+                $set: {
+                    matches: matchList
+                }
+            })
+            console.log("I have your matches!");
+            console.log(currentUser.matches);
         }
         };
+    
+    function addFriend0(){
+        friendList.push(currentUser.matches[0]);
+        console.log(friendList);
+        collection.update(
+            {_id: currentUser._id},
+                {
+                    $set: {
+                        friends: friendList
+                }
+            })
+    }
+
+    function addFriend1(){
+        friendList.push(currentUser.matches[1]);
+        collection.update(
+            {_id: currentUser._id},
+                {
+                    $set: {
+                        friends: friendList
+                }
+            })
+    }
+
+    function addFriend2(){
+        friendList.push(currentUser.matches[2]);
+        collection.update(
+            {_id: currentUser._id},
+                {
+                    $set: {
+                        friends: friendList
+                }
+            })
+    }
   });
 });
+
+
 
 
 router.get('/newuser', function(req, res, next) {
@@ -121,6 +173,7 @@ router.post('/newuserbyizzy', function(req, res) {
                 "dep" : dep,
                 "low" : low,
                 "sui" : sui,
+                "friends": []
                 
             }, function (err, doc) {
                 if (err) {
